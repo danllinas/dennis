@@ -15,6 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors'
 gem 'aws-sdk', '~> 2'
 gem 'aws-s3', git: 'https://github.com/bartoszkopinski/aws-s3.git'
+gem 'haml'
 
 
 group :development, :test do
