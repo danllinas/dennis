@@ -16,6 +16,7 @@ gem 'better_errors'
 gem 'aws-sdk', '~> 2'
 gem 'aws-s3', git: 'https://github.com/bartoszkopinski/aws-s3.git'
 gem 'haml'
+gem 'haml-rails'
 gem 'foundation-rails'
 
 
