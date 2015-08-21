@@ -1,0 +1,27 @@
+=form_for(@user) do |f|
+  -if @user.errors.any?
+    #error_explanation
+      %h2
+        =pluralize(@user.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        -@user.errors.full_messages do |message|
+          %li
+            =message
+  .row
+    .small-10
+      .row
+        .small-2.columns
+          =f.label :email, class: "right inline"
+        .small-10.columns
+          =f.text_field :email
+    .small-10
+      .row
+        .small-2.columns
+          =f.label :password, class: "right inline"
+        .small-10.columns
+          =f.password_field :password
+    .small-10
+      .row
+        .small-10.small-offset-2.columns
+          =f.submit class: "button round small"

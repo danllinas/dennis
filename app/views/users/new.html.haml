@@ -1,0 +1,8 @@
+%dl.tabs{'data-tab' => "", 'data-options' => "deep_linking:true"}
+  %dd
+    =link_to 'View User', users_path
+  %dd.active
+    =link_to "New User", new_user_path
+%h1 New User
+=render 'form'
+=link_to 'Back', users_path
