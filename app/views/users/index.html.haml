@@ -1,5 +1,10 @@
 %p#notice
-  = notice
+  =notice
+%dl.tabs{'data-options' => 'deep_linking: true'}
+  %dd.active
+    =link_to "View Users", users_path
+  %dd
+    =link_to "New User", new_user_path
 %h1 Listing Users
 %table
   %thead

@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title><%= full_title(yield(:title)) %></title>
+
     <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
     <%= render 'shared/navigation' %>
+
+    <div class="row">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
+        <% end %>
+      <% end %>
+    </div>
+
     <div class="row">
       <div class="small-3 column">
         <h3>Dennis Music</h3>
@@ -18,7 +30,6 @@
         <%= yield %>
       </div>
     </div>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   </body>
 </html>
