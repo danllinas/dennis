@@ -6,3 +6,12 @@
     %li.toggle-topbar
       =link_to "#" do
         %span Menu
+  %section.top-bar-section
+    %ul.right
+      %li.has-dropdown.no-click
+        =link_to "Menu", "#"
+        %ul.dropdown
+          %li
+            =link_to "Login", "#"
+          %li
+            =link_to "Create a New User", new_user_path

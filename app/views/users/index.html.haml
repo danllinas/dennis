@@ -14,8 +14,15 @@
     - @users.each do |user|
       %tr
         %td
-          =user.email
-          =link_to "Show", user, class: 'button tiny radius'
+          %span.has-tip.tip-top{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Created on #{user.created_at.strftime("%m%e%Y at %w:%M %p")}, Last modified on #{user.updated_at.strftime("%m%e%Y at %w:%M %p")}"}
+            =user.email
+          %a{"data-reveal-id" => "user-#{user.id}", :href => "#", class: 'button tiny radius'} Show User
+          .reveal-modal{"data-reveal" => "", :id => "user-#{user.id}"}
+            =user.email
+            %br
+            =user.password_digest
+            %a.close-reveal-modal
+              &#215;
           =link_to "Edit", edit_user_path(user), class: 'button tiny radius'
           =link_to "Destroy", user, method: :delete, data: { confirm: 'Are you sure?'},
                                                   class: 'button tiny radius'
